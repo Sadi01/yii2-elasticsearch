@@ -192,7 +192,7 @@ HTML;
     public function save()
     {
         $target = $this->module->logTarget;
-        $messages = $target->filterMessages($target->messages, Logger::LEVEL_PROFILE, ['yii\elasticsearch\Connection::httpRequest']);
+        $messages = $target->filterMessages($target->messages, Logger::LEVEL_PROFILE, ['sadi01\elasticsearch\Connection::httpRequest']);
 
         return ['messages' => $messages];
     }
