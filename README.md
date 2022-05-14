@@ -33,7 +33,7 @@ The preferred way to install this extension is through [composer](http://getcomp
 
 
 ```
-composer require --prefer-dist yiisoft/yii2-elasticsearch:"~2.1.0"
+composer require --prefer-dist sadi01/yii2-elasticsearch:"~2.1.0"
 ```
 
 Configuration
@@ -46,7 +46,7 @@ return [
     //....
     'components' => [
         'elasticsearch' => [
-            'class' => 'yii\elasticsearch\Connection',
+            'class' => 'sadi01\elasticsearch\Connection',
             'nodes' => [
                 ['http_address' => '127.0.0.1:9200'],
                 // configure more hosts if you have a cluster

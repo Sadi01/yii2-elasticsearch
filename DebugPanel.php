@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\elasticsearch;
+namespace sadi01\elasticsearch;
 
 use yii\debug\Panel;
 use yii\helpers\ArrayHelper;
@@ -74,7 +74,7 @@ EOD;
     {
         //Register YiiAsset in order to inject csrf token in ajax requests
         YiiAsset::register(\Yii::$app->view);
-        
+
         $timings = $this->calculateTimings();
         ArrayHelper::multisort($timings, 3, SORT_DESC);
         $rows = [];

@@ -3,7 +3,7 @@
  * @author Aleksandar Panic
  **/
 
-namespace yii\elasticsearch\tests\helpers;
+namespace sadi01\elasticsearch\tests\helpers;
 
 
 use yii\elasticsearch\ActiveRecord;

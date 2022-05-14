@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\elasticsearch;
+namespace sadi01\elasticsearch;
 
 use Yii;
 use yii\base\Component;
@@ -504,6 +504,8 @@ class Connection extends Component
 
         $this->resetCurlHandle();
         curl_setopt($this->_curl, CURLOPT_URL, $url);
+        curl_setopt($this->_curl, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($this->_curl, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt_array($this->_curl, $options);
         if (curl_exec($this->_curl) === false) {
             throw new Exception('Elasticsearch request failed: ' . curl_errno($this->_curl) . ' - ' . curl_error($this->_curl), [
