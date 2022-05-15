@@ -65,7 +65,7 @@ class ActiveRecord extends BaseActiveRecord
     private $_version;
     private $_highlight;
     private $_explanation;
-
+    private $_inner_hits;
 
     /**
      * Returns the database connection used by this AR class.
@@ -229,6 +229,14 @@ class ActiveRecord extends BaseActiveRecord
     public function getExplanation()
     {
         return $this->_explanation;
+    }
+
+    /**
+     * @return array|null A list of inner_hits.
+     */
+    public function getInnerHits()
+    {
+        return $this->_inner_hits;
     }
 
     /**
@@ -396,6 +404,7 @@ class ActiveRecord extends BaseActiveRecord
         $record->_score = isset($row['_score']) ? $row['_score'] : null;
         $record->_version = isset($row['_version']) ? $row['_version'] : null; // TODO version should always be available...
         $record->_explanation = isset($row['_explanation']) ? $row['_explanation'] : null;
+        $record->_inner_hits = isset($row['inner_hits']) ? $row['inner_hits'] : null;
     }
 
     /**
